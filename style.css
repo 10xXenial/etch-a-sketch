@@ -66,8 +66,11 @@ h1 {
     flex-wrap: wrap;
     padding: 0;
     margin-bottom: 10px;
+    box-sizing: border-box;
+
 
 }
+
 .squares {
     margin: 0;
     border: 0.5px solid gray;
@@ -77,4 +80,8 @@ h1 {
     box-sizing: border-box;
     transition: all 0.35s;
 }
-
+@media (max-height: 800px) {
+    .grid {
+        width: 400px;
+    }
+}

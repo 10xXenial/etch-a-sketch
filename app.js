@@ -5,7 +5,19 @@ const clearBtn = document.querySelector('.clear')
 const rndmGridBtn = document.querySelector('.random')
 newGrisBtn.addEventListener('click', () => {
     let newg = prompt("Choose a Grid Size: ")
-    replaceGrid(newg)
+    let done = false;
+    while (done == false) {
+    if (newg <= 100) {
+        replaceGrid(newg)
+        break
+    } else {
+        alert("Grid size must be less than or equal to 100 to avoid crashing")
+        newg = null
+        newg = prompt("Choose a grid size: ")
+        done = false;
+
+    }
+}
 })
 clearBtn.addEventListener('click', () => {
     clearGrid()
@@ -35,9 +47,11 @@ function randomGrid() {
         i.style.backgroundColor = generateRandomColor()
     })
 }
+
+const gridSizeInHardCode = grid.offsetWidth;
+console.log("hi " + gridSizeInHardCode)
 function getSquareSize(sOg) {
-    size = 520 / sOg 
-    console.log(size)
+    size = gridSizeInHardCode / sOg 
     return size
 }
 function removeGrid() {
@@ -74,8 +88,20 @@ function drawGrid(gridSize) {
     
     )
 }
-userInputSize = prompt("Choose a grid size: ")
-drawGrid(userInputSize)
+let fir = prompt("Choose a grid size: ")
+let done = false;
+    while (done == false) {
+    if (fir <= 100) {
+        drawGrid(fir)
+        break
+    } else {
+        alert("Grid size must be less than or equal to 100 to avoid crashing")
+        fir = null
+        fir = prompt("Choose a grid size: ")
+        done = false;
+
+    }
+}
 
 
 
